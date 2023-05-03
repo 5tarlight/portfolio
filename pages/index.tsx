@@ -1,3 +1,4 @@
+import Dock from "@/components/Dock";
 import Lock from "@/components/Lock";
 import Head from "next/head";
 import { useState } from "react";
@@ -16,6 +17,7 @@ export default function Home() {
 
       <div className="main">
         <Lock show={show} setShow={setShow} />
+        <Dock />
       </div>
 
       <style jsx>{`
