@@ -39,7 +39,7 @@ const Lock: NextPage<Props> = ({ show, setShow }) => {
           width: 100vw;
           height: ${show ? "100vh" : 0};
           transition-duration: 0.5s;
-          z-index: 999;
+          z-index: ${show ? 999 : -2};
         }
 
         .content {

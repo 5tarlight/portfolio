@@ -1,32 +1,41 @@
 import { NextPage } from "next";
-import DockItem, { DockProps } from "./DockItem";
+import DockItem, { DockProps as Docks } from "./DockItem";
 
-const Dock: NextPage = () => {
-  const items: DockProps[] = [
+export interface DockProps {
+  toggleModal: (index: number) => void;
+}
+
+const Dock: NextPage<DockProps> = ({ toggleModal }) => {
+  const items: Docks[] = [
     {
       icon: "profile",
       value: "YEAHx4",
       isActive: false,
+      onClick: () => toggleModal(0),
     },
     {
       icon: "hat",
       value: "Education",
       isActive: false,
+      onClick: () => toggleModal(1),
     },
     {
       icon: "skill",
       value: "Skills",
       isActive: false,
+      onClick: () => toggleModal(2),
     },
     {
       icon: "project",
       value: "Projects",
       isActive: false,
+      onClick: () => toggleModal(3),
     },
     {
       icon: "contact",
       value: "Contact",
       isActive: false,
+      onClick: () => toggleModal(4),
     },
   ];
 
@@ -34,8 +43,14 @@ const Dock: NextPage = () => {
     <>
       <div className="container">
         <div className="dock">
-          {items.map(({ icon, value, isActive }, i) => (
-            <DockItem icon={icon} value={value} isActive={isActive} key={i} />
+          {items.map(({ icon, value, isActive, onClick }, i) => (
+            <DockItem
+              icon={icon}
+              value={value}
+              isActive={isActive}
+              key={i}
+              onClick={onClick}
+            />
           ))}
         </div>
       </div>

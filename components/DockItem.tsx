@@ -11,9 +11,10 @@ export interface DockProps {
   icon: "profile" | "hat" | "contact" | "project" | "skill";
   value: string;
   isActive: boolean;
+  onClick: () => void;
 }
 
-const DockItem: NextPage<DockProps> = ({ icon, value, isActive }) => {
+const DockItem: NextPage<DockProps> = ({ icon, value, isActive, onClick }) => {
   const iconElement = (() => {
     switch (icon) {
       case "profile":
@@ -47,6 +48,10 @@ const DockItem: NextPage<DockProps> = ({ icon, value, isActive }) => {
           }}
           onMouseLeave={() => {
             hoverRef.current?.style.setProperty("display", "none");
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
           }}
         >
           {iconElement}
