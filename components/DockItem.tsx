@@ -11,7 +11,6 @@ export interface DockProps {
   icon: "profile" | "hat" | "contact" | "project" | "skill";
   value: string;
   isActive: boolean;
-  // key: any';
 }
 
 const DockItem: NextPage<DockProps> = ({ icon, value, isActive }) => {
@@ -77,6 +76,13 @@ const DockItem: NextPage<DockProps> = ({ icon, value, isActive }) => {
           left: calc(-150px + 12px);
           width: 300px;
           justify-content: center;
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
 
         .hover-text {
