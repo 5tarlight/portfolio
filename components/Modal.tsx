@@ -5,6 +5,7 @@ import { useState } from "react";
 export interface ModalInterface {
   title: string;
   show: boolean;
+  setShow: (show: boolean) => any;
   content: JSX.Element;
   zIndex: number;
   loc: Point;
@@ -18,6 +19,7 @@ const Modal: NextPage<ModalInterface> = ({
   zIndex,
   loc,
   onDragMove,
+  setShow,
 }) => {
   if (!show) return null;
 
@@ -45,11 +47,17 @@ const Modal: NextPage<ModalInterface> = ({
           }}
         >
           <div className="title-menu">
-            <div className="red"></div>
+            <div
+              className="red"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShow(false);
+              }}
+            ></div>
             <div className="yellow"></div>
             <div className="green"></div>
           </div>
-          <div>{title}</div>
+          <div className="title-content">{title}</div>
           <div></div>
         </div>
         <div className="content">
@@ -101,8 +109,8 @@ const Modal: NextPage<ModalInterface> = ({
           background-color: #434343;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
-          height: 24px;
-          line-height: 24px;
+          height: 48px;
+          line-height: 48px;
           padding-left: 8px;
           user-select: none;
         }
@@ -111,12 +119,16 @@ const Modal: NextPage<ModalInterface> = ({
           display: flex;
         }
 
+        .title-content {
+          margin-left: -8px;
+        }
+
         .red,
         .yellow,
         .green {
           width: 12px;
           height: 12px;
-          margin: 6px 4px;
+          margin: 18px 4px;
           border-radius: 50%;
         }
 

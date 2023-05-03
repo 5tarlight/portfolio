@@ -66,6 +66,13 @@ export default function Home() {
         zIndex={indexes[i]}
         loc={locations[i]}
         onDragMove={(x: number, y: number) => moveModal(i, y, x)}
+        setShow={(show) => {
+          setShowModal([
+            ...showModal.slice(0, i),
+            show,
+            ...showModal.slice(i + 1),
+          ]);
+        }}
         key={i}
       />
     );
