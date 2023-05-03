@@ -1,19 +1,49 @@
+import { Point } from "@/pages";
 import { NextPage } from "next";
+import { useState } from "react";
 
 export interface ModalInterface {
   title: string;
   show: boolean;
   content: JSX.Element;
   zIndex: number;
+  loc: Point;
+  onDragMove: (x: number, y: number) => any;
 }
 
-const Modal: NextPage<ModalInterface> = ({ show, title, content, zIndex }) => {
+const Modal: NextPage<ModalInterface> = ({
+  show,
+  title,
+  content,
+  zIndex,
+  loc,
+  onDragMove,
+}) => {
   if (!show) return null;
+
+  const [isDragging, setIsDragging] = useState(false);
 
   return (
     <>
       <div className="container">
-        <div className="title">
+        <div
+          className="title"
+          onPointerDown={(e) => {
+            e.stopPropagation();
+            setIsDragging(true);
+          }}
+          onPointerUp={(e) => {
+            e.stopPropagation();
+            setIsDragging(false);
+          }}
+          onPointerMove={(e) => {
+            e.stopPropagation();
+            if (isDragging) onDragMove(e.movementX, e.movementY);
+          }}
+          onMouseLeave={(e) => {
+            if (isDragging) setIsDragging(false);
+          }}
+        >
           <div className="title-menu">
             <div className="red"></div>
             <div className="yellow"></div>
@@ -35,6 +65,14 @@ const Modal: NextPage<ModalInterface> = ({ show, title, content, zIndex }) => {
           width: 800px;
           height: 500px;
           border-radius: 5px;
+          top: ${loc[0]}px;
+          left: ${loc[1]}px;
+          box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
         }
 
         .content {
@@ -66,6 +104,7 @@ const Modal: NextPage<ModalInterface> = ({ show, title, content, zIndex }) => {
           height: 24px;
           line-height: 24px;
           padding-left: 8px;
+          user-select: none;
         }
 
         .title-menu {

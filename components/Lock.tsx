@@ -13,7 +13,7 @@ const Lock: NextPage<Props> = ({ show, setShow }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container" draggable>
         <div className="content">
           <img src="/profile.png" />
           <span>YEAHx4</span>
