@@ -62,6 +62,7 @@ const Lock: NextPage<Props> = ({ show, setShow }) => {
           color: white;
           margin-bottom: 2rem;
           font-weight: 600;
+          user-select: none;
         }
 
         button {
@@ -77,6 +78,7 @@ const Lock: NextPage<Props> = ({ show, setShow }) => {
         button:hover {
           background-color: white;
           color: #1c2655;
+          cursor: pointer;
         }
 
         svg {
