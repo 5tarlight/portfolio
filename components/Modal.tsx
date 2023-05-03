@@ -34,7 +34,12 @@ const Modal: NextPage<ModalInterface> = ({
 
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        onClick={(e) => {
+          moveUp();
+        }}
+      >
         <div
           className="title"
           onPointerDown={(e) => {

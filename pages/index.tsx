@@ -1,17 +1,20 @@
 import Dock from "@/components/Dock";
+import Education from "@/components/Education";
 import Lock from "@/components/Lock";
 import Modal from "@/components/Modal";
+import Profile from "@/components/Profile";
+import Skills from "@/components/Skills";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export type Point = [number, number];
 
 export default function Home() {
   const [show, setShow] = useState(true);
 
-  const profileContent = <div>Profile</div>;
-  const eduContent = <div>Education</div>;
-  const skillContent = <div>Skill</div>;
+  const profileContent = <Profile />;
+  const eduContent = <Education />;
+  const skillContent = <Skills />;
   const proContent = <div>Projects</div>;
   const contactContent = <div>Contact</div>;
 
@@ -69,8 +72,6 @@ export default function Home() {
 
     setIndexes(newIndex);
   };
-
-  useEffect(() => console.dir(indexes), [indexes]);
 
   const modals = contents.map((content, i) => {
     return (
