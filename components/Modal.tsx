@@ -1,6 +1,6 @@
 import { Point } from "@/pages";
 import { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface ModalInterface {
   title: string;
@@ -10,6 +10,7 @@ export interface ModalInterface {
   zIndex: number;
   loc: Point;
   onDragMove: (x: number, y: number) => any;
+  moveUp: () => any;
 }
 
 const Modal: NextPage<ModalInterface> = ({
@@ -20,8 +21,14 @@ const Modal: NextPage<ModalInterface> = ({
   loc,
   onDragMove,
   setShow,
+  moveUp,
 }) => {
   if (!show) return null;
+
+  useEffect(() => {
+    moveUp();
+    return () => {};
+  }, [show]);
 
   const [isDragging, setIsDragging] = useState(false);
 
@@ -33,6 +40,7 @@ const Modal: NextPage<ModalInterface> = ({
           onPointerDown={(e) => {
             e.stopPropagation();
             setIsDragging(true);
+            moveUp();
           }}
           onPointerUp={(e) => {
             e.stopPropagation();
@@ -81,12 +89,13 @@ const Modal: NextPage<ModalInterface> = ({
             22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
             41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
             100px 100px 80px rgba(0, 0, 0, 0.07);
+          border: 0.5px solid grey;
         }
 
         .content {
           background-color: #656565;
           width: 100%;
-          height: calc(100% - 24px);
+          height: calc(100% - 48px);
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
           overflow-y: hidden;

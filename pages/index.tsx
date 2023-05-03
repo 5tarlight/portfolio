@@ -57,6 +57,21 @@ export default function Home() {
     ]);
   };
 
+  const moveUp = (id: number) => {
+    const current = indexes[id];
+    const newIndex = indexes.map((index, i) => {
+      if (i === id) return 5;
+      else {
+        if (index >= current) return index - 1;
+        else return index;
+      }
+    });
+
+    setIndexes(newIndex);
+  };
+
+  useEffect(() => console.dir(indexes), [indexes]);
+
   const modals = contents.map((content, i) => {
     return (
       <Modal
@@ -73,6 +88,7 @@ export default function Home() {
             ...showModal.slice(i + 1),
           ]);
         }}
+        moveUp={() => moveUp(i)}
         key={i}
       />
     );

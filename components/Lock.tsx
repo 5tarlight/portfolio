@@ -7,10 +7,6 @@ interface Props {
 }
 
 const Lock: NextPage<Props> = ({ show, setShow }) => {
-  useEffect(() => {
-    console.log(show);
-  }, [show]);
-
   return (
     <>
       <div className="container" draggable>
@@ -20,7 +16,6 @@ const Lock: NextPage<Props> = ({ show, setShow }) => {
 
           <button
             onClick={() => {
-              console.log("Open!");
               setShow(false);
             }}
           >
