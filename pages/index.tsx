@@ -1,8 +1,10 @@
+import Contact from "@/components/Contact";
 import Dock from "@/components/Dock";
 import Education from "@/components/Education";
 import Lock from "@/components/Lock";
 import Modal from "@/components/Modal";
 import Profile from "@/components/Profile";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Head from "next/head";
 import { useState } from "react";
@@ -15,8 +17,8 @@ export default function Home() {
   const profileContent = <Profile />;
   const eduContent = <Education />;
   const skillContent = <Skills />;
-  const proContent = <div>Projects</div>;
-  const contactContent = <div>Contact</div>;
+  const proContent = <Projects />;
+  const contactContent = <Contact />;
 
   const contents = [
     profileContent,
@@ -28,10 +30,10 @@ export default function Home() {
 
   const [locations, setLoc] = useState<Point[]>([
     [0, 0],
-    [20, 20],
-    [30, 30],
-    [40, 40],
     [50, 50],
+    [100, 30],
+    [150, 150],
+    [200, 200],
   ]);
 
   const titles = [
