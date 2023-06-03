@@ -55,9 +55,10 @@ const Modal: NextPage<ModalInterface> = ({
             e.stopPropagation();
             if (isDragging) onDragMove(e.movementX, e.movementY);
           }}
-          onMouseLeave={(e) => {
-            if (isDragging) setIsDragging(false);
-          }}
+          // When drag speed is too fast, drag will be canceled.
+          // onMouseLeave={(e) => {
+          //   if (isDragging) setIsDragging(false);
+          // }}
         >
           <div className="title-menu">
             <div
