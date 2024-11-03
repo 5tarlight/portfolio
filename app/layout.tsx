@@ -22,6 +22,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body>
         <Header />
