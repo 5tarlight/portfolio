@@ -6,7 +6,7 @@ export default function Header() {
     <header
       className={cn(
         "w-full flex justify-between items-center shadow-md",
-        "h-16 px-4 md:px-32 sticky top-0 bg-[#292929] z-10 mb-8"
+        "h-24 px-4 md:px-32 sticky top-0 bg-[#292929] z-10 mb-8"
       )}
     >
       <div className="flex han-sans">
