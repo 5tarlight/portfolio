@@ -13,7 +13,7 @@ export default function Footer() {
         )}
       >
         <div>&copy; {year === 2024 ? year : `2024 - ${year}`} Kim Kyu San.</div>
-        <div>
+        <div className="text-2xl">
           <Link href="https://github.com/5tarlight">
             <FaGithub />
           </Link>

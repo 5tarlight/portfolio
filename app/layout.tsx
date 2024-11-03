@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="min-h-[100vh]">{children}</main>
         <Footer />
       </body>
     </html>
