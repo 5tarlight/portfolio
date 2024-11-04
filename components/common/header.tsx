@@ -14,7 +14,11 @@ export default function Header() {
           Kim Kyu San
         </Link>
       </div>
-      <div>Navigations...</div>
+      <div className="han-sans text-2xl">
+        <Link href="https://post.yeahx4.me" className="hover:underline p-4">
+          Blog
+        </Link>
+      </div>
     </header>
   );
 }
