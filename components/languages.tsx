@@ -1,9 +1,18 @@
 import cn from "@yeahx4/cn";
 import { BiLogoTypescript } from "react-icons/bi";
-import { FaCrown, FaJava, FaPython, FaRust, FaSquareJs } from "react-icons/fa6";
+import {
+  FaBrain,
+  FaComputer,
+  FaCrown,
+  FaJava,
+  FaPython,
+  FaRust,
+  FaSquareJs,
+} from "react-icons/fa6";
 import { SiCplusplus } from "react-icons/si";
-import { TbBrandKotlin } from "react-icons/tb";
+import { TbBrandKotlin, TbMathIntegralX } from "react-icons/tb";
 import Title from "./title";
+import { MdWeb } from "react-icons/md";
 
 export default function Languages() {
   return (
@@ -83,6 +92,7 @@ export default function Languages() {
             ))}
           </div>
         </div>
+
         <Title value="Frameworks" className="text-center my-16" />
         <div
           className={cn(
@@ -138,6 +148,48 @@ export default function Languages() {
                   <FaCrown />
                 </div>
               )}
+            </div>
+          ))}
+        </div>
+
+        <Title value="Interest" className="text-center my-16" />
+        <div
+          className={cn(
+            "grid md:grid-cols-4 grid-cols-2 max-w-5xl w-full text-black",
+            "gap-x-4 gap-y-8"
+          )}
+        >
+          {[
+            {
+              element: <FaComputer size={40} />,
+              text: "Algorithm & PS",
+            },
+            {
+              element: <FaBrain size={40} />,
+              text: "Artificial Intelligence",
+            },
+            {
+              element: <MdWeb size={40} />,
+              text: "Web",
+            },
+            {
+              element: <i className="devicon-wasm-original text-[36px]" />,
+              text: "Web Assembly",
+            },
+            {
+              element: <TbMathIntegralX size={40} />,
+              text: "Mathematics",
+            },
+          ].map((framework, index) => (
+            <div
+              key={index}
+              className={cn(
+                "p-4 rounded shadow hover:shadow-md flex flex-col items-center",
+                "transition text-black bg-white gap-2 relative"
+              )}
+            >
+              {framework.element}
+              <span className="text-lg font-bold">{framework.text}</span>
             </div>
           ))}
         </div>
