@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { Noto_Sans_KR, Black_Han_Sans } from "next/font/google";
-import cn from "@yeahx4/cn";
 
 export const metadata: Metadata = {
   title: "김규산 | Kim Kyu San",
