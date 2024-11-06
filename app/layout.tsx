@@ -33,12 +33,12 @@ export default function RootLayout({
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
-      </head>
-
-      <style>{`
+        <style>{`
         ${notoSansKr}
         ${blackHanSans}
       `}</style>
+      </head>
+
       <body>
         <Header />
         <main className="min-h-[100vh]">{children}</main>
