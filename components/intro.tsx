@@ -18,8 +18,8 @@ export default function Intro() {
         >
           <div>
             <Typing
-              value={["Hello World!", "I'm Kyusan Kim"]}
-              loop
+              value={["Kim Kyu San"]}
+              loop={false}
               className={cn("font-bold text-4xl md:text-6xl opacity-65")}
             />
             <div className="flex flex-col mt-16 text-lg opacity-95 gap-1">

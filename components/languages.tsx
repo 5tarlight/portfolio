@@ -71,10 +71,7 @@ export default function Languages() {
                   "transition text-black bg-white relative"
                 )}
               >
-                <div
-                  key={`inner-${index}`}
-                  className="flex gap-2 justify-center items-center"
-                >
+                <div className="flex gap-2 justify-center items-center">
                   {...lang.icon}
                 </div>
                 {lang.good && (
