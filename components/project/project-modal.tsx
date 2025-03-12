@@ -5,9 +5,8 @@ import { useState } from "react";
 
 export interface ProjectModalProps {
   title: string;
-  description: string;
-  image: string;
-  technologies: string[];
+  image?: string;
+  tags: string[];
   github?: string;
   website?: string;
   children?: React.ReactNode;
@@ -27,9 +26,8 @@ export default function ProjectModal(props: ProjectModalProps) {
       >
         <div>
           <h3 className="text-xl font-bold text-black">{props.title}</h3>
-          <p className="text-gray-600">{props.description}</p>
           <div className="flex gap-2 my-2">
-            {props.technologies.map((tech) => (
+            {props.tags.map((tech) => (
               <span
                 key={tech}
                 className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full"
@@ -47,9 +45,8 @@ export default function ProjectModal(props: ProjectModalProps) {
 
 function ProjectModalContent({
   title,
-  description,
   image,
-  technologies,
+  tags,
   github,
   website,
   children,

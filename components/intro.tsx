@@ -23,7 +23,6 @@ export default function Intro() {
               className={cn("font-bold text-4xl md:text-6xl opacity-65")}
             />
             <div className="flex flex-col mt-16 text-lg opacity-95 gap-1">
-              <span>안녕하세요!</span>
               <span>
                 대학생 개발자{" "}
                 <strong>
@@ -36,14 +35,11 @@ export default function Intro() {
                 <strong>
                   <u>사용자</u>
                 </strong>
-                와{" "}
-                <strong>
-                  <u>나</u>
-                </strong>{" "}
-                모두 행복해지는 서비스를 만듭니다.
+                와 함께 행복해지는 서비스를 만듭니다.
               </span>
             </div>
           </div>
+
           <div>
             <Image
               height={160}
