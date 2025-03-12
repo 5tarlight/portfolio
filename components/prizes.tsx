@@ -3,6 +3,14 @@ import Title from "./title";
 export default function Prizes() {
   const data: { title: string; duration: string; description?: string }[] = [
     {
+      title: "한양사대부고 프로그래밍 대회 금상(1등)",
+      duration: "2021.08",
+    },
+    {
+      title: "성동 4차산업혁명 페스티벌 은상(2등)",
+      duration: "2021.11",
+    },
+    {
       title: "AI응용학과 캠프 1등",
       duration: "2024.07",
     },
