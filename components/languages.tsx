@@ -25,47 +25,55 @@ export default function Languages() {
               {
                 name: "JavaScript / TypeScript",
                 icon: [
-                  <FaSquareJs size={40} />,
-                  <BiLogoTypescript size={46} />,
+                  <FaSquareJs size={40} key="js" />,
+                  <BiLogoTypescript size={46} key="ts" />,
                 ],
                 good: true,
               },
               {
                 name: "HTML / CSS",
                 icon: [
-                  <i className="devicon-html5-plain text-[40px]" />,
-                  <i className="devicon-css3-plain text-[40px]" />,
+                  <i className="devicon-html5-plain text-[40px]" key="html" />,
+                  <i className="devicon-css3-plain text-[40px]" key="css" />,
                 ],
                 good: true,
               },
               {
                 name: "Python",
-                icon: [<FaPython size={40} />],
+                icon: [<FaPython size={40} key="python" />],
                 good: true,
               },
               {
                 name: "Java / Kotlin",
-                icon: [<FaJava size={40} />, <TbBrandKotlin size={40} />],
+                icon: [
+                  <FaJava size={40} key="java" />,
+                  <TbBrandKotlin size={40} key="kotlin" />,
+                ],
                 good: true,
               },
               {
                 name: "Rust",
-                icon: [<FaRust size={40} />],
+                icon: [<FaRust size={40} key="rust" />],
               },
               {
                 name: "C / C++",
                 icon: [
-                  <i className="devicon-c-plain text-[40px]" />,
-                  <SiCplusplus size={40} />,
+                  <i className="devicon-c-plain text-[40px]" key="c" />,
+                  <SiCplusplus size={40} key="cpp" />,
                 ],
               },
               {
                 name: "C#",
-                icon: [<i className="devicon-csharp-plain text-[40px]" />],
+                icon: [
+                  <i
+                    className="devicon-csharp-plain text-[40px]"
+                    key="csharp"
+                  />,
+                ],
               },
             ].map((lang, index) => (
               <div
-                key={index}
+                key={`${lang.name}-${index}`}
                 className={cn(
                   "p-4 rounded shadow hover:shadow-md",
                   "transition text-black bg-white relative"
@@ -99,35 +107,50 @@ export default function Languages() {
         >
           {[
             {
-              element: <i className="devicon-react-original text-[36px]" />,
+              element: (
+                <i className="devicon-react-original text-[36px]" key="react" />
+              ),
               text: "React.js",
               good: true,
             },
             {
-              element: <i className="devicon-nextjs-plain text-[36px]" />,
+              element: (
+                <i className="devicon-nextjs-plain text-[36px]" key="next" />
+              ),
               text: "Next.js",
               good: true,
             },
             {
-              element: <i className="devicon-nodejs-plain text-[36px]" />,
+              element: (
+                <i className="devicon-nodejs-plain text-[36px]" key="node" />
+              ),
               text: "Node.js",
               good: true,
             },
             {
-              element: <i className="devicon-tailwindcss-plain text-[36px]" />,
+              element: (
+                <i
+                  className="devicon-tailwindcss-plain text-[36px]"
+                  key="tailwind"
+                />
+              ),
               text: "Tailwind CSS",
             },
             {
-              element: <i className="devicon-vitejs-plain text-[36px]" />,
+              element: (
+                <i className="devicon-vitejs-plain text-[36px]" key="vite" />
+              ),
               text: "Vite.js",
             },
             {
-              element: <i className="devicon-spring-plain text-[36px]" />,
+              element: (
+                <i className="devicon-spring-plain text-[36px]" key="spring" />
+              ),
               text: "Spring",
             },
           ].map((framework, index) => (
             <div
-              key={index}
+              key={`${framework.text}-${index}`}
               className={cn(
                 "p-4 rounded shadow hover:shadow-md flex flex-col items-center",
                 "transition text-black bg-white gap-2 relative"
@@ -158,28 +181,30 @@ export default function Languages() {
         >
           {[
             {
-              element: <FaComputer size={40} />,
+              element: <FaComputer size={40} key="algorithm" />,
               text: "Algorithm & PS",
             },
             {
-              element: <FaBrain size={40} />,
+              element: <FaBrain size={40} key="ai" />,
               text: "Artificial Intelligence",
             },
             {
-              element: <MdWeb size={40} />,
+              element: <MdWeb size={40} key="web" />,
               text: "Web",
             },
             {
-              element: <i className="devicon-wasm-original text-[36px]" />,
+              element: (
+                <i className="devicon-wasm-original text-[36px]" key="wasm" />
+              ),
               text: "Web Assembly",
             },
             {
-              element: <TbMathIntegralX size={40} />,
+              element: <TbMathIntegralX size={40} key="math" />,
               text: "Mathematics",
             },
           ].map((framework, index) => (
             <div
-              key={index}
+              key={`${framework.text}-${index}`}
               className={cn(
                 "p-4 rounded shadow hover:shadow-md flex flex-col items-center",
                 "transition text-black bg-white gap-2 relative"
