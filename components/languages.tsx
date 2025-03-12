@@ -172,7 +172,7 @@ export default function Languages() {
           ))}
         </div>
 
-        <Title value="Interest" className="text-center my-16" />
+        <Title value="Interests" className="text-center my-16" />
         <div
           className={cn(
             "grid md:grid-cols-4 grid-cols-2 max-w-5xl w-full text-black",
