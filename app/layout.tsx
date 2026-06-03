@@ -2,22 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
-import { Noto_Sans_KR, Black_Han_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "김규산 | Kim Kyu San",
   description: "개발자 김규산의 포트폴리오",
 };
-
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["100", "400", "700", "900"],
-});
-
-const blackHanSans = Black_Han_Sans({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export default function RootLayout({
   children,
@@ -32,10 +21,6 @@ export default function RootLayout({
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
-        <style>{`
-        ${notoSansKr}
-        ${blackHanSans}
-      `}</style>
       </head>
 
       <body>
