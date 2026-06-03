@@ -37,27 +37,20 @@ export default function ProjectModal(props: ProjectModalProps) {
             ))}
           </div>
         </div>
-        {open && <ProjectModalContent {...props} setOpen={setOpen} />}
+        {open && <ProjectModalContent setOpen={setOpen} />}
       </div>
     </>
   );
 }
 
-function ProjectModalContent({
-  title,
-  image,
-  tags,
-  github,
-  website,
-  children,
-  setOpen,
-}: ProjectModalProps & { setOpen: (open: boolean) => void }) {
+function ProjectModalContent({ setOpen }: { setOpen: (open: boolean) => void }) {
   return (
     <div
       className={cn(
         "fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center",
         "justify-center"
       )}
+      onClick={() => setOpen(false)}
     ></div>
   );
 }

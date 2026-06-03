@@ -1,16 +1,6 @@
 "use client";
 
-import { ReactTyped } from "react-typed";
-
-export default function Typing({
-  value,
-  loop,
-  typingSpeed = 50,
-  backSpeed = 50,
-  smartBackspace,
-  startWhenVisible,
-  className,
-}: {
+interface TypingProps {
   value: string[];
   loop?: boolean;
   typingSpeed?: number;
@@ -18,16 +8,18 @@ export default function Typing({
   smartBackspace?: boolean;
   startWhenVisible?: boolean;
   className?: string;
-}) {
+}
+
+export default function Typing({
+  value,
+  className,
+}: TypingProps) {
   return (
-    <ReactTyped
-      strings={value}
-      loop={loop}
-      typeSpeed={typingSpeed}
-      backSpeed={backSpeed}
-      smartBackspace={smartBackspace}
-      startWhenVisible={startWhenVisible}
-      className={className}
-    />
+    <span className={className}>
+      {value[0] ?? ""}
+      <span aria-hidden className="animate-pulse opacity-70">
+        |
+      </span>
+    </span>
   );
 }
